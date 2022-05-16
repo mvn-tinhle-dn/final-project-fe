@@ -1,0 +1,33 @@
+.product-list{
+  .img-product {
+    width: 69px;
+  }
+  .input-search{
+    float: right;
+    margin-bottom: 24px;
+    width: 36%;
+  }
+}
+.ant-form-item-control-input {
+  width: 289px;
+}
+.img-detail {
+  width: 200px;
+}
+.info-detail {
+  margin-left: 6px;
+  display: inline-block;
+  width: 200px;
+  &-item {
+    margin: 6px 0;
+  }
+}
+
+.flex .ant-form-item-control-input {
+  width: 100%;
+}
+
+button[type=submit] {
+  right: 0;
+}
+

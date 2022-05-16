@@ -1,0 +1,24 @@
+.header {
+  .logo {
+    float: left;
+    width: 136px;
+    height: 100%;
+    padding: 6px 0 6px 0;
+  }
+  .header-actions {
+    float: right;
+    display: flex;
+  }
+  .ant-row-rtl .logo {
+    float: right;
+    margin: 16px 0 16px 24px;
+  }
+}
+
+.ant-layout-header.header {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
