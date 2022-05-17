@@ -2,7 +2,6 @@ import { Layout } from 'antd';
 import { Content } from 'antd/lib/layout/layout';
 import React, { Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import DashBoard from '../Dashboard/index.js';
 
 const FooterCP = React.lazy(() => import('../../components/layouts/Footer/index.js'));
 const HeaderCP = React.lazy(() => import('../../components/layouts/Header/index.js'));
@@ -10,6 +9,7 @@ const SiteBarCP = React.lazy(() => import('../../components/layouts/SiteBar/inde
 const ProductsList = React.lazy(() => import('../ProductList/index.js'));
 const AddProduct = React.lazy(() => import('../AddProduct/index.js'));
 const Account = React.lazy(() => import('../Account/index.js'));
+const DashBoard = React.lazy(() => import('../Dashboard/index.js'));
 
 function Home() {
   return (
