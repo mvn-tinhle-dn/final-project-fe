@@ -130,7 +130,7 @@ export default function Login() {
 
   const handleOnSubmit = (values) => {
     const findInfo = data.find((item) => {
-      return item.email === values.email && item.password === values.password;
+      return item.email.toLowerCase() === values.email.toLowerCase() && item.password === values.password;
     });
 
     if (findInfo === undefined) {

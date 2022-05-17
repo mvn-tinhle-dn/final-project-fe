@@ -29,8 +29,6 @@ export default function SiteBarCP() {
         mode="inline"
         theme="dark"
         defaultSelectedKeys={["product"]}
-        // defaultOpenKeys={["product"]}
-        // selectedKeys={items}
         className="menu-site-bar"
         items={items}
       />
