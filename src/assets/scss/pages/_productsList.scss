@@ -1,23 +1,29 @@
-.product-list{
+.product-list {
   .img-product {
     width: 69px;
   }
-  .input-search{
+
+  .input-search {
     float: right;
     margin-bottom: 24px;
     width: 36%;
   }
 }
+
 .ant-form-item-control-input {
   width: 289px;
 }
+
 .img-detail {
   width: 200px;
+  object-fit: cover;
 }
+
 .info-detail {
-  margin-left: 6px;
+  margin-left: 16px;
   display: inline-block;
   width: 200px;
+
   &-item {
     margin: 6px 0;
   }
@@ -30,4 +36,3 @@
 button[type=submit] {
   right: 0;
 }
-

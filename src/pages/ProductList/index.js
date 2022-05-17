@@ -6,7 +6,7 @@ import {
   Modal,
   Select,
   Space,
-  Table,
+  Table
 } from "antd";
 import React, { useState } from "react";
 import openNotificationWithIcon from "../../components/animations";
@@ -141,11 +141,11 @@ export default function ProductsL() {
   }
   //search
   const onSearch = (e) => {
+    let valueSearch = e.target.value.toLowerCase();
     if (e.target.value === "") {
       setDataSource(JSON.parse(localStorage.getItem("products")));
     } else {
-      let valueSearch = e.target.value.toLowerCase();
-      const arrSearch = dataShow.filter((item) => {
+      const arrSearch = dataSource.filter((item) => {
         const nameProd = item.name.toLowerCase();
         return nameProd.includes(valueSearch);
       });
@@ -271,7 +271,6 @@ export default function ProductsL() {
               </div>
             </div>
           </div>
-
         </form>
       </Modal>
     </div>
