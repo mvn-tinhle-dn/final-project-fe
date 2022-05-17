@@ -159,6 +159,7 @@ export default function Login() {
         onFinish={handleOnSubmit}
         autoComplete="off"
       >
+        <h1 className="login-title">Login</h1>
         <Form.Item
           label="Email"
           name="email"

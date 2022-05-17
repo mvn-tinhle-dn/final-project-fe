@@ -156,6 +156,7 @@ export default function ProductsL() {
   return (
     <div className="product-list">
       <h1 className="title-page">Products</h1>
+      {/* Search */}
       <Space direction="vertical" className="input-search">
         <Search
           name="search"

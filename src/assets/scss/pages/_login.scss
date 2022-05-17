@@ -1,3 +1,14 @@
 .form-login {
-  padding-top: 86px;
+  padding: 16px;
+  border: 1px solid rgb(75, 145, 206);
+  border-radius: 8px;
+  background-color: #e6ffff;
+  width: 50%;
+  margin: 86px auto;
+
+  .login-title {
+    font-size: 36px;
+    text-align: center;
+    color: #1890ff;
+  }
 }
