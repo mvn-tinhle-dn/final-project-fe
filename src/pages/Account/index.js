@@ -10,7 +10,8 @@ export default function Account() {
         </div>
         <div className="account-info">
           <h1>Hi {user.email} !</h1>
-          <p> {user.email}</p>
+          <p>Email:  {user.email}</p>
+          <p>Admin</p>
         </div>
       </div>
     </div >

@@ -2,6 +2,7 @@ import { Layout } from 'antd';
 import { Content } from 'antd/lib/layout/layout';
 import React, { Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import DashBoard from '../Dashboard/index.js';
 
 const FooterCP = React.lazy(() => import('../../components/layouts/Footer/index.js'));
 const HeaderCP = React.lazy(() => import('../../components/layouts/Header/index.js'));
@@ -22,7 +23,8 @@ function Home() {
               <Switch>
                 <Route path='/home/add'><AddProduct /></Route>
                 <Route path='/home/account'><Account /></Route>
-                <Route path='/home'><ProductsList /></Route>
+                <Route path='/home/products'><ProductsList /></Route>
+                <Route path='/home'><DashBoard /></Route>
               </Switch>
             </Suspense>
           </Content>
