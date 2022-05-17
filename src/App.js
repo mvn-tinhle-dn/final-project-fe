@@ -1,4 +1,3 @@
-import Home from './pages/Home';
 import './assets/scss/styles.scss';
 import {
   BrowserRouter as Router,
@@ -6,8 +5,10 @@ import {
   Route,
 } from "react-router-dom";
 import { Suspense } from 'react';
+import Home from './pages/Home';
 import PrivateRoute from './core/guards/PrivateRoute';
 import Auth from './pages/Auth';
+
 function App() {
   return (
     <Router>

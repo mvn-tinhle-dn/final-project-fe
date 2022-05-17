@@ -1,12 +1,14 @@
 import { Layout } from 'antd';
 import { Content } from 'antd/lib/layout/layout';
+import React, { Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import FooterCP from '../../components/layouts/Footer';
-import HeaderCP from '../../components/layouts/Header';
-import SiteBarCP from '../../components/layouts/SiteBar';
-import ProductsList from '../ProductList';
-import AddProduct from '../AddProduct';
-import Account from '../Account';
+
+const FooterCP = React.lazy(() => import('../../components/layouts/Footer/index.js'));
+const HeaderCP = React.lazy(() => import('../../components/layouts/Header/index.js'));
+const SiteBarCP = React.lazy(() => import('../../components/layouts/SiteBar/index.js'));
+const ProductsList = React.lazy(() => import('../ProductList/index.js'));
+const AddProduct = React.lazy(() => import('../AddProduct/index.js'));
+const Account = React.lazy(() => import('../Account/index.js'));
 
 function Home() {
   return (
@@ -16,11 +18,13 @@ function Home() {
         <SiteBarCP />
         <Layout className='home-content'>
           <Content className="site-layout-background">
-            <Switch>
-              <Route path='/home/add'><AddProduct /></Route>
-              <Route path='/home/account'><Account /></Route>
-              <Route path='/home'><ProductsList /></Route>
-            </Switch>
+            <Suspense fallback={<div>Loading...</div>}>
+              <Switch>
+                <Route path='/home/add'><AddProduct /></Route>
+                <Route path='/home/account'><Account /></Route>
+                <Route path='/home'><ProductsList /></Route>
+              </Switch>
+            </Suspense>
           </Content>
         </Layout>
       </Layout>
