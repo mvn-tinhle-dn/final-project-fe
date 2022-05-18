@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { Menu } from "antd";
 import {
   AlignLeftOutlined, PlusSquareOutlined, UserOutlined, BarChartOutlined
@@ -7,6 +7,8 @@ import Sider from "antd/lib/layout/Sider";
 import React from "react";
 
 export default function SiteBarCP() {
+  const location = useLocation();
+
   function getItem(label, key, icon, children, type) {
     return {
       key,
@@ -18,10 +20,10 @@ export default function SiteBarCP() {
   };
 
   const items = [
-    getItem(<NavLink to="/home">Dash Board</NavLink>, 'dashboard', <BarChartOutlined />),
-    getItem(<NavLink to="/home/products">Products List</NavLink>, 'product', <AlignLeftOutlined />),
-    getItem(<NavLink to="/home/add">Add Product</NavLink>, 'add', <PlusSquareOutlined />),
-    getItem(<NavLink to="/home/account">Account</NavLink>, 'account', <UserOutlined />),
+    getItem(<NavLink to="/home">Dash Board</NavLink>, '/home', <BarChartOutlined />),
+    getItem(<NavLink to="/home/products">Products List</NavLink>, '/home/products', <AlignLeftOutlined />),
+    getItem(<NavLink to="/home/add">Add Product</NavLink>, '/home/add', <PlusSquareOutlined />),
+    getItem(<NavLink to="/home/account">Account</NavLink>, '/home/account', <UserOutlined />),
   ];
 
   return (
@@ -29,7 +31,8 @@ export default function SiteBarCP() {
       <Menu
         mode="inline"
         theme="dark"
-        defaultSelectedKeys={["dashboard"]}
+        defaultSelectedKeys={["/home"]}
+        selectedKeys={[location.pathname]}
         className="menu-site-bar"
         items={items}
       />
