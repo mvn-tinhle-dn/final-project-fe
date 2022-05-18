@@ -96,7 +96,7 @@ export default function EditProduct() {
             {
               type: "number",
               min: 0,
-              max: 10000,
+              max: 10000000000,
               required: true,
             },
           ]}>
