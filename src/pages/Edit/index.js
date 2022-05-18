@@ -32,17 +32,21 @@ export default function EditProduct() {
     }
   };
   function onFinish(values) {
-    const currentValue = arrEdit.find((item) => item.id === currItem.id);
-    const indexValue = arrEdit.indexOf(currentValue);
-    arrEdit[indexValue].name = values.name;
-    arrEdit[indexValue].type = values.type;
-    arrEdit[indexValue].price = values.price;
-    arrEdit[indexValue].num = values.num;
-    arrEdit[indexValue].des = values.des;
-    url === "" ? arrEdit[indexValue].url = currItem.url : arrEdit[indexValue].url = url;
-    localStorage.setItem("products", JSON.stringify(arrEdit));
-    openNotificationWithIcon("success", "Update Product");
-    history.push("/products")
+    if (values.name === "" || values.price === "") {
+      openNotificationWithIcon("warning", " Miss Prams");
+    } else {
+      const currentValue = arrEdit.find((item) => item.id === currItem.id);
+      const indexValue = arrEdit.indexOf(currentValue);
+      arrEdit[indexValue].name = values.name;
+      arrEdit[indexValue].type = values.type;
+      arrEdit[indexValue].price = values.price;
+      arrEdit[indexValue].num = values.num;
+      arrEdit[indexValue].des = values.des;
+      url === "" ? arrEdit[indexValue].url = currItem.url : arrEdit[indexValue].url = url;
+      localStorage.setItem("products", JSON.stringify(arrEdit));
+      openNotificationWithIcon("success", "Update Product");
+      history.push("/products")
+    }
   }
   return (
     <div className="edit">
