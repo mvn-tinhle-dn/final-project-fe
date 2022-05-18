@@ -1,9 +1,6 @@
 .header {
   .logo {
-    float: left;
-    width: 136px;
-    height: 100%;
-    padding: 6px 0 6px 0;
+    object-fit: contain;
   }
 
   .ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
@@ -31,4 +28,8 @@
   top: 0;
   right: 0;
   left: 0;
+}
+
+.ant-layout-header {
+  height: 52px;
 }

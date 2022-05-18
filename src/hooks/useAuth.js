@@ -12,7 +12,7 @@ const UserAuth = () => {
         localStorage.setItem('user', JSON.stringify({ email }));
         setUser({ email });
         setIsLogin(true);
-        history.replace('/home');
+        history.replace('/');
         res({ email });
       }, 1000);
     });
@@ -20,7 +20,7 @@ const UserAuth = () => {
   const logout = () => {
     localStorage.removeItem('user');
     setIsLogin(false);
-    history.replace('/');
+    history.replace('/auth/login');
   }
 
   return { isLogin, login, logout }

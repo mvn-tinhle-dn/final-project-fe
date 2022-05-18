@@ -43,8 +43,8 @@ export default function DashBoard() {
           "#f3ba2f",
           "#2a71d0",
         ],
-        borderColor: "black",
-        borderWidth: 2,
+        borderColor: "green",
+        borderWidth: 1,
       },
     ],
   });

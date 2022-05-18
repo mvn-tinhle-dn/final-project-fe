@@ -20,15 +20,12 @@ export default function HeaderCP() {
   };
 
   const items = [
-    getItem(<Link to='/home/account'>{user.email}</Link>, 'account', <UserOutlined />),
+    getItem(<Link to='/account'>{user.email}</Link>, 'account', <UserOutlined />),
     getItem("Logout", 'logout', <LoginOutlined />, () => logout()),
   ];
 
   return (
     <Header className="header">
-      <div className="logo">
-        <img src='https://bethuysinh.com.vn/wp-content/uploads/2021/03/logo-1-bethuysinh.png' alt='logo' />
-      </div>
       <Menu key="menu-header" theme="dark" className="header-actions" items={items}>
       </Menu>
     </Header>

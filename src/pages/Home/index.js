@@ -2,6 +2,8 @@ import { Layout } from 'antd';
 import { Content } from 'antd/lib/layout/layout';
 import React, { Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import EditProduct from '../Edit/index.js';
+import ProductDetail from '../ProductDetail/index.js';
 
 const FooterCP = React.lazy(() => import('../../components/layouts/Footer/index.js'));
 const HeaderCP = React.lazy(() => import('../../components/layouts/Header/index.js'));
@@ -21,10 +23,12 @@ function Home() {
           <Content className="site-layout-background">
             <Suspense fallback={<div>Loading...</div>}>
               <Switch>
-                <Route path='/home/add'><AddProduct /></Route>
-                <Route path='/home/account'><Account /></Route>
-                <Route path='/home/products'><ProductsList /></Route>
-                <Route path='/home'><DashBoard /></Route>
+                <Route path='/add'><AddProduct /></Route>
+                <Route path='/account'><Account /></Route>
+                <Route path='/products/:id'><ProductDetail /></Route>
+                <Route path='/products'><ProductsList /></Route>
+                <Route path='/edit/:id'><EditProduct /></Route>
+                <Route path='/'><DashBoard /></Route>
               </Switch>
             </Suspense>
           </Content>

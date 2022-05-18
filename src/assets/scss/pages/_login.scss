@@ -9,6 +9,8 @@
   .login-title {
     font-size: 36px;
     text-align: center;
-    color: #1890ff;
+    background-image: linear-gradient(90deg, #fdbb2d, #22c1c3);
+    background-clip: text;
+    color: transparent;
   }
 }

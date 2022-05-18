@@ -20,10 +20,13 @@ export default function SiteBarCP() {
   };
 
   const items = [
-    getItem(<NavLink to="/home">Dash Board</NavLink>, '/home', <BarChartOutlined />),
-    getItem(<NavLink to="/home/products">Products List</NavLink>, '/home/products', <AlignLeftOutlined />),
-    getItem(<NavLink to="/home/add">Add Product</NavLink>, '/home/add', <PlusSquareOutlined />),
-    getItem(<NavLink to="/home/account">Account</NavLink>, '/home/account', <UserOutlined />),
+
+    getItem(<NavLink exact to="/">
+      <img src='https://www.icons101.com/icon_ico/id_31985/fish.ico' alt='logo' /></NavLink>),
+    getItem(<NavLink exact to="/">Dash Board</NavLink>, '/', <BarChartOutlined />),
+    getItem(<NavLink to="/products">Products List</NavLink>, '/products', <AlignLeftOutlined />),
+    getItem(<NavLink to="/add">Add Product</NavLink>, '/add', <PlusSquareOutlined />),
+    getItem(<NavLink to="/account">Account</NavLink>, '/account', <UserOutlined />),
   ];
 
   return (
@@ -31,11 +34,12 @@ export default function SiteBarCP() {
       <Menu
         mode="inline"
         theme="dark"
-        defaultSelectedKeys={["/home"]}
+        defaultSelectedKeys={["/"]}
         selectedKeys={[location.pathname]}
         className="menu-site-bar"
         items={items}
       />
     </Sider>
+
   );
 }
