@@ -50,7 +50,7 @@ export default function ProductsL() {
     {
       title: "Price",
       dataIndex: "price",
-      key: "price",
+      render: (price) => <>{parseInt(price).toLocaleString('it-IT', {style : 'currency', currency : 'VND'})}</>,
       sorter: (a, b) => a.price - b.price,
     },
     {
@@ -79,6 +79,7 @@ export default function ProductsL() {
     setIsModalVisible(true);
     setIsProdCur(product);
   };
+
 
   //delete
   function handleDeleteProd(product) {
