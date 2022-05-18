@@ -50,7 +50,7 @@ export default function ProductsL() {
     {
       title: "Price",
       dataIndex: "price",
-      render: (price) => <>{parseInt(price).toLocaleString('it-IT', {style : 'currency', currency : 'VND'})}</>,
+      render: (price) => <>{parseInt(price).toLocaleString('it-IT', { style: 'currency', currency: 'VND' })}</>,
       sorter: (a, b) => a.price - b.price,
     },
     {

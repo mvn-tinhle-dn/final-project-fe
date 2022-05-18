@@ -17,6 +17,7 @@ export default function EditProduct() {
       span: 12,
     },
   };
+
   const arrEdit = products;
   const arrType = JSON.parse(localStorage.getItem("typeProds"));
   const onChange = (e) => {
@@ -83,7 +84,7 @@ export default function EditProduct() {
             {
               type: "number",
               min: 0,
-              max: 10000,
+              max: 1000000000000,
               required: true,
             },
           ]}>
@@ -96,11 +97,11 @@ export default function EditProduct() {
             {
               type: "number",
               min: 0,
-              max: 10000000000,
+              max: 1000000000000,
               required: true,
             },
           ]}>
-           <InputNumber className="ant-input" />
+          <InputNumber className="ant-input" />
         </Form.Item>
         <Form.Item name="des" label="Description">
           <Input.TextArea />
@@ -110,11 +111,12 @@ export default function EditProduct() {
             Image :
           </label>
           <input
-            className="ant-col ant-col-12 ant-form-item-control"
+            className="ant-col ant-col-8 ant-form-item-control"
             type="file"
             name="file"
             onChange={(e) => onChange(e)}
           />
+          <img className="img-add" src={url} alt="" />
         </div>
         <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 15 }}>
           <Button type="primary" htmlType="submit">

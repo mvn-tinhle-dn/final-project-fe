@@ -18,7 +18,6 @@ function App() {
           <PrivateRoute path="/">
             <Home />
           </PrivateRoute>
-
         </Switch>
       </Suspense>
     </Router>

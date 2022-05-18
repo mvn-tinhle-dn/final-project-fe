@@ -71,16 +71,10 @@ export default function AddProduct() {
         <Form.Item
           name={["type"]}
           label="Type"
-          rules={[
-            {
-              type: "text",
-              required: true,
-            },
-          ]}
+          rules={[{ required: true, message: 'Province is required' }]}
         >
           <Select
             label="Name"
-            showSearch
             className="ant-form-item-control-input-content"
             placeholder="Search to Select"
             optionFilterProp="children"
@@ -106,7 +100,7 @@ export default function AddProduct() {
             {
               type: "number",
               min: 0,
-              max: 10000,
+              max: 1000000000000,
               required: true,
             },
           ]}
@@ -141,6 +135,7 @@ export default function AddProduct() {
             onChange={(e) => onChange(e)}
             required
           />
+          <img className="img-add" src={url} alt="" />
         </div>
         <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 15 }}>
           <Button type="primary" htmlType="submit">
