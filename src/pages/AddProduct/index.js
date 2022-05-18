@@ -135,7 +135,9 @@ export default function AddProduct() {
             onChange={(e) => onChange(e)}
             required
           />
-          <img className="img-add" src={url} alt="" />
+          {url === "" ?
+            <img className="img-add" src="https://img.sosanhgia.com/images/375x0/71374705fa7f499f881a929a262b680c/image/now-vn-ga-ngon-tram-mon-giam-toi-50.jpg" alt="" /> :
+            <img className="img-add" src={url} alt="" />}
         </div>
         <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 15 }}>
           <Button type="primary" htmlType="submit">

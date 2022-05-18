@@ -116,7 +116,9 @@ export default function EditProduct() {
             name="file"
             onChange={(e) => onChange(e)}
           />
-          <img className="img-add" src={url} alt="" />
+          {url === "" ?
+            <img className="img-add" src={currItem.url} alt="" /> :
+            <img className="img-add" src={url} alt="" />}
         </div>
         <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 15 }}>
           <Button type="primary" htmlType="submit">

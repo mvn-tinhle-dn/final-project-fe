@@ -1,4 +1,6 @@
-import { Form, Input, Button, Checkbox } from "antd";
+import { Button, Checkbox, Form, Input } from "antd";
+import { useEffect, useState } from "react";
+import { apiAuthGetMe } from "../../../api/auth/auth.api";
 import openNotificationWithIcon from "../../../components/animations";
 import UserAuth from "../../../hooks/useAuth";
 
@@ -111,23 +113,16 @@ export default function Login() {
   ];
 
   localStorage.setItem("typeProds", JSON.stringify(arrType));
-
   const { login } = UserAuth();
-  const data = [
-    {
-      email: "tinh.le@monstar-lab.com",
-      password: "Tinhbayern304",
-    },
-    {
-      email: "toan.luu@monstar-lab.com",
-      password: "Toan123",
-    },
-    {
-      email: "toan@123.com",
-      password: "Toan123",
-    },
-  ];
+  const [data, setData] = useState();
 
+  useEffect(() => {
+    apiAuthGetMe()
+      .then((response) => response.data)
+      .then((result) => setData([{ ...result.data, password: "Tinh1234" }]));
+  }, []);
+  localStorage.setItem("useLogin", JSON.stringify(data));
+  
   const handleOnSubmit = (values) => {
     const findInfo = data.find((item) => {
       return item.email.toLowerCase() === values.email.toLowerCase() && item.password === values.password;
