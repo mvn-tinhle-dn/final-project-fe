@@ -7,7 +7,7 @@ export default function AddProduct() {
   const arrPros = JSON.parse(localStorage.getItem("products"));
   const layout = {
     labelCol: {
-      span: 2,
+      span: 8,
     },
     wrapperCol: {
       span: 8,
@@ -56,6 +56,7 @@ export default function AddProduct() {
         onFinish={onFinish}
         validateMessages={validateMessages}
       >
+        <h2 className="title-add"> Add Product</h2>
         <Form.Item
           name={["name"]}
           label="Name"
@@ -127,7 +128,7 @@ export default function AddProduct() {
           <Input.TextArea />
         </Form.Item>
         <div className="ant-row ant-form-item">
-          <label className="ant-col ant-col-2 ant-form-item-label img-file">
+          <label className="ant-col ant-col-8 ant-form-item-label img-file">
             Image :
           </label>
           <input
@@ -138,7 +139,7 @@ export default function AddProduct() {
             required
           />
         </div>
-        <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 5 }}>
+        <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 15 }}>
           <Button type="primary" htmlType="submit">
             Add Product
           </Button>

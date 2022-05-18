@@ -11,7 +11,7 @@ export default function EditProduct() {
   const currItem = products.find((item) => item.id.toString() === id)
   const layout = {
     labelCol: {
-      span: 2,
+      span: 8,
     },
     wrapperCol: {
       span: 12,
@@ -48,6 +48,7 @@ export default function EditProduct() {
     <div className="edit">
       <h1 className="title-page">Edit</h1>
       <Form {...layout} initialValues={currItem} onFinish={onFinish}>
+        <h2 className="title-add">Edit Product</h2>
         <Form.Item name="name" label="Name">
           <Input />
         </Form.Item>
@@ -81,7 +82,7 @@ export default function EditProduct() {
           <Input.TextArea />
         </Form.Item>
         <div className="ant-row ant-form-item">
-          <label className="ant-col ant-col-2 ant-form-item-label img-file">
+          <label className="ant-col ant-col-8 ant-form-item-label img-file">
             Image :
           </label>
           <input
@@ -91,7 +92,7 @@ export default function EditProduct() {
             onChange={(e) => onChange(e)}
           />
         </div>
-        <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 5 }}>
+        <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 15 }}>
           <Button type="primary" htmlType="submit">
             Update Product
           </Button>
