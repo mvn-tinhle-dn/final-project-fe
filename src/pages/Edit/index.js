@@ -32,7 +32,7 @@ export default function EditProduct() {
     }
   };
   function onFinish(values) {
-    if (values.name === "" || values.price === "") {
+    if (values.name === "" || values.price === "" || values.num === "") {
       openNotificationWithIcon("warning", " Miss Prams");
     } else {
       const currentValue = arrEdit.find((item) => item.id === currItem.id);
