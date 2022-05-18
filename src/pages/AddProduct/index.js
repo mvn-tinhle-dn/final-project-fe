@@ -105,7 +105,7 @@ export default function AddProduct() {
           rules={[
             {
               type: "number",
-              min: 1,
+              min: 0,
               max: 10000,
               required: true,
             },
@@ -118,11 +118,14 @@ export default function AddProduct() {
           label="Price"
           rules={[
             {
+              type: "number",
+              min: 0,
+              max: 1000000000000,
               required: true,
             },
           ]}
         >
-          <Input />
+          <InputNumber className="ant-input" />
         </Form.Item>
         <Form.Item name={["des"]} label="Descriptions">
           <Input.TextArea />

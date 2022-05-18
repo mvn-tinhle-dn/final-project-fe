@@ -32,7 +32,7 @@ export default function EditProduct() {
     }
   };
   function onFinish(values) {
-    if (values.name === "" || values.price === "" || values.num === "") {
+    if (values.name === "" || values.price === "" || values.num === null) {
       openNotificationWithIcon("warning", " Miss Prams");
     } else {
       const currentValue = arrEdit.find((item) => item.id === currItem.id);
@@ -76,11 +76,31 @@ export default function EditProduct() {
             })}
           </Select>
         </Form.Item>
-        <Form.Item name="num" label="Number">
+        <Form.Item
+          name="num"
+          label="Number"
+          rules={[
+            {
+              type: "number",
+              min: 0,
+              max: 10000,
+              required: true,
+            },
+          ]}>
           <InputNumber className="ant-input" />
         </Form.Item>
-        <Form.Item name="price" label="Price">
-          <Input />
+        <Form.Item
+          name="price"
+          label="Price"
+          rules={[
+            {
+              type: "number",
+              min: 0,
+              max: 10000,
+              required: true,
+            },
+          ]}>
+           <InputNumber className="ant-input" />
         </Form.Item>
         <Form.Item name="des" label="Description">
           <Input.TextArea />
