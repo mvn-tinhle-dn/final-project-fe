@@ -27,7 +27,9 @@
 }
 
 .ant-form.ant-form-horizontal {
-  border: 1px solid #ccc;
+  border: 2px solid #29e1e4;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(90deg, #22c1c3, #fdbb2d);
   padding: 16px;
   border-radius: 8px;
   box-shadow: 2px 2px rgb(238, 231, 231);
