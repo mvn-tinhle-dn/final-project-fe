@@ -20,7 +20,7 @@ const validateMessages = {
 };
 const arrType = JSON.parse(localStorage.getItem("typeProds"));
 
-export default function FormPr ({onFinish,onChange,url,current}) {
+export default function FormProd ({onFinish,onChange,url,current}) {
   return (
     <Form
     {...layout}

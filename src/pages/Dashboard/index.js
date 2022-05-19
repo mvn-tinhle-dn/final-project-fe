@@ -52,7 +52,7 @@ export default function DashBoard() {
 
   return (
     <div className="dash-board">
-      <h1 className="title-page">Dash Board</h1>
+      <h1 className="title-page">DashBoard</h1>
       <div className="flex">
         <div className="dash-board-top">
           <BarChart chartData={prodsData} />

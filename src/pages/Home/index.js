@@ -2,6 +2,7 @@ import { Layout } from 'antd';
 import { Content } from 'antd/lib/layout/layout';
 import React, { Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import ScrollTop from '../../components/modules/ScrollTop/ScrollTop.js';
 import EditProduct from '../Edit/index.js';
 import ProductDetail from '../ProductDetail/index.js';
 
@@ -21,13 +22,14 @@ function Home() {
         <SiteBarCP />
         <Layout className='home-content'>
           <Content className="site-layout-background">
+            <ScrollTop/>
             <Suspense fallback={<div>Loading...</div>}>
               <Switch>
-                <Route path='/add'><AddProduct /></Route>
+                <Route path='/products/add'><AddProduct /></Route>
                 <Route path='/account'><Account /></Route>
-                <Route path='/products/:id'><ProductDetail /></Route>
+                <Route path='/products/edit/:id'><EditProduct /></Route>
+                <Route path='/products/detail/:id'><ProductDetail /></Route>
                 <Route path='/products'><ProductsList /></Route>
-                <Route path='/edit/:id'><EditProduct /></Route>
                 <Route path='/'><DashBoard /></Route>
               </Switch>
             </Suspense>

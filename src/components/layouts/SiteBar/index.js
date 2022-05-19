@@ -23,9 +23,9 @@ export default function SiteBarCP() {
 
     getItem(<NavLink exact to="/">
       <img src='https://www.icons101.com/icon_ico/id_31985/fish.ico' alt='logo' /></NavLink>),
-    getItem(<NavLink exact to="/">Dash Board</NavLink>, '/', <BarChartOutlined />),
+    getItem(<NavLink exact to="/">DashBoard</NavLink>, '/', <BarChartOutlined />),
     getItem(<NavLink to="/products">Products List</NavLink>, '/products', <AlignLeftOutlined />),
-    getItem(<NavLink to="/add">Add Product</NavLink>, '/add', <PlusSquareOutlined />),
+    getItem(<NavLink to="/products/add">Add Product</NavLink>, '/products/add', <PlusSquareOutlined />),
     getItem(<NavLink to="/account">Account</NavLink>, '/account', <UserOutlined />),
   ];
 

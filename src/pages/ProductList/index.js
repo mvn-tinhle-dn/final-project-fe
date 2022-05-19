@@ -65,8 +65,8 @@ export default function ProductsL() {
       key: "action",
       render: (record) => (
         <Space size="middle">
-          <Link to={`/products/${record.id}`}> <button className="btn btn-view"><EyeOutlined /></button></Link>
-          <Link to={`/edit/${record.id}`}><button className="btn btn-edit"><EditOutlined /></button></Link>
+          <Link to={`/products/detail/${record.id}`}> <button className="btn btn-view"><EyeOutlined /></button></Link>
+          <Link to={`/products/edit/${record.id}`}><button className="btn btn-edit"><EditOutlined /></button></Link>
           <button className="btn btn-delete" onClick={() => showModal(record)}><DeleteOutlined /></button>
         </Space>
       ),
