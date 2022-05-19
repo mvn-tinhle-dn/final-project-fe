@@ -11,7 +11,7 @@ export default function Login() {
       name: "Lọc Sủi Vi Sinh QS-200A",
       type: "Oxi & Lọc Nuớc",
       num: 4,
-      price: 1500000,
+      price: 1100000,
       url: "https://thuysinhdanang.vn/wp-content/uploads/2020/08/download-2.jpg",
       des: "Lọc Bông Bio QanVee QS-200A loại lọc vi sinh cao cấp dành cho hồ cá cảnh và thủy sinh, đặc biệt anh em nuôi tép rất yêu thích loại lọc bio này bởi tính tiện dụng của QanVee QS-200A",
     },
@@ -20,7 +20,7 @@ export default function Login() {
       name: "BỘ ĐÈN TRƯNG TIỂU CẢNH XINMA",
       type: "Đèn",
       num: 15,
-      price: 1300000,
+      price: 1200000,
       url: "https://thuysinhdanang.vn/wp-content/uploads/2020/09/O1CN01UuGulL1kpl9atxp2X_733654733-768x649.jpg",
       des: "– Công suất đèn : 12W , Ánh sáng trắng .",
     },
@@ -30,7 +30,7 @@ export default function Login() {
       type: "Oxi & Lọc Nuớc",
       num: 4,
       url: "https://thuysinhdanang.vn/wp-content/uploads/2020/08/103077172_2976619269091476_2510197048428963327_o.jpg",
-      price: 1100000,
+      price: 120000,
       des: "Van điện Mufan kèm đếm giọt và van 1 chiều",
     },
     {
@@ -38,7 +38,7 @@ export default function Login() {
       name: "Lọc Sủi Vi Sinh QS-200A",
       type: "Oxi & Lọc Nuớc",
       num: 4,
-      price: 1231400,
+      price: 1100000,
       url: "https://thuysinhdanang.vn/wp-content/uploads/2020/08/download-2.jpg",
       des: "Lọc Bông Bio QanVee QS-200A loại lọc vi sinh cao cấp dành cho hồ cá cảnh và thủy sinh, đặc biệt anh em nuôi tép rất yêu thích loại lọc bio này bởi tính tiện dụng của QanVee QS-200A",
     },
@@ -47,7 +47,7 @@ export default function Login() {
       name: "BỘ ĐÈN TRƯNG TIỂU CẢNH XINMA",
       type: "Đèn",
       num: 15,
-      price: 1100000,
+      price: 1999999,
       url: "https://thuysinhdanang.vn/wp-content/uploads/2020/09/O1CN01UuGulL1kpl9atxp2X_733654733-768x649.jpg",
       des: "– Công suất đèn : 12W , Ánh sáng trắng .",
     },
@@ -57,7 +57,7 @@ export default function Login() {
       type: "Oxi & Lọc Nuớc",
       num: 4,
       url: "https://thuysinhdanang.vn/wp-content/uploads/2020/08/103077172_2976619269091476_2510197048428963327_o.jpg",
-      price: 392000,
+      price: 512000,
       des: "Van điện Mufan kèm đếm giọt và van 1 chiều",
     },
     {
@@ -65,7 +65,7 @@ export default function Login() {
       name: "Lọc Sủi Vi Sinh QS-200A",
       type: "Oxi & Lọc Nuớc",
       num: 4,
-      price: 479000,
+      price: 967000,
       url: "https://thuysinhdanang.vn/wp-content/uploads/2020/08/download-2.jpg",
       des: "Lọc Bông Bio QanVee QS-200A loại lọc vi sinh cao cấp dành cho hồ cá cảnh và thủy sinh, đặc biệt anh em nuôi tép rất yêu thích loại lọc bio này bởi tính tiện dụng của QanVee QS-200A",
     },
@@ -74,7 +74,7 @@ export default function Login() {
       name: "BỘ ĐÈN TRƯNG TIỂU CẢNH XINMA",
       type: "Đèn",
       num: 15,
-      price: 1050000,
+      price: 97000,
       url: "https://thuysinhdanang.vn/wp-content/uploads/2020/09/O1CN01UuGulL1kpl9atxp2X_733654733-768x649.jpg",
       des: "– Công suất đèn : 12W , Ánh sáng trắng .",
     },
@@ -84,7 +84,7 @@ export default function Login() {
       type: "Oxi & Lọc Nuớc",
       num: 4,
       url: "https://thuysinhdanang.vn/wp-content/uploads/2020/08/103077172_2976619269091476_2510197048428963327_o.jpg",
-      price: 999000,
+      price: 2000000,
       des: "Van điện Mufan kèm đếm giọt và van 1 chiều",
     },
   ]
@@ -119,10 +119,9 @@ export default function Login() {
   useEffect(() => {
     apiAuthGetMe()
       .then((response) => response.data)
-      .then((result) => setData([{ ...result.data, password: "Tinh1234" }]));
+      .then((result) => setData([{ ...result.data, password: "Tinh1234" }]))
   }, []);
-  localStorage.setItem("useLogin", JSON.stringify(data));
-  
+
   const handleOnSubmit = (values) => {
     const findInfo = data.find((item) => {
       return item.email.toLowerCase() === values.email.toLowerCase() && item.password === values.password;

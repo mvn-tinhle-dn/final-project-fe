@@ -15,7 +15,7 @@ export default function ProductDetail() {
             <span className="item-name">{currItem.name}</span>
           </div>
           <div className="info-detail-item">
-            <span className="item-price">{currItem.price} $</span>
+            <span className="item-price">{currItem.price.toLocaleString('it-IT', { style: 'currency', currency: 'VND' })}</span>
           </div>
           <div className="info-detail-item">
             <h2 className="label-detail">Type : </h2>
