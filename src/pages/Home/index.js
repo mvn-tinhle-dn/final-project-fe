@@ -1,4 +1,4 @@
-import { Layout } from 'antd';
+import { Layout, Spin } from 'antd';
 import { Content } from 'antd/lib/layout/layout';
 import React, { Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom';
@@ -23,7 +23,7 @@ function Home() {
         <Layout className='home-content'>
           <Content className="site-layout-background">
             <ScrollTop/>
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Spin className='spin-load'/>}>
               <Switch>
                 <Route path='/products/add'><AddProduct /></Route>
                 <Route path='/account'><Account /></Route>

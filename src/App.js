@@ -1,3 +1,4 @@
+import { Spin } from 'antd';
 import { Suspense } from 'react';
 import {
   BrowserRouter as Router, Route, Switch
@@ -10,7 +11,7 @@ import Home from './pages/Home';
 function App() {
   return (
     <Router>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Spin className='spin-load'/>}>
         <Switch>
           <Route path="/auth">
             <Auth />
