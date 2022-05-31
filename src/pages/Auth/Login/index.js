@@ -1,8 +1,10 @@
 import { Button, Checkbox, Form, Input } from "antd";
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { apiAuthGetMe } from "../../../api/auth/auth.api";
 import openNotificationWithIcon from "../../../components/animations";
 import UserAuth from "../../../hooks/useAuth";
+import { userLogged } from "../../../store/useSlice";
 
 export default function Login() {
   const products = [
@@ -87,7 +89,7 @@ export default function Login() {
       price: 2000000,
       des: "Van điện Mufan kèm đếm giọt và van 1 chiều",
     },
-  ]
+  ];
   localStorage.setItem("products", JSON.stringify(products));
   const arrType = [
     {
@@ -114,17 +116,21 @@ export default function Login() {
 
   localStorage.setItem("typeProds", JSON.stringify(arrType));
   const { login } = UserAuth();
+  const dispatch = useDispatch();
   const [data, setData] = useState();
 
   useEffect(() => {
     apiAuthGetMe()
       .then((response) => response.data)
-      .then((result) => setData([{ ...result.data, password: "Tinh1234" }]))
+      .then((result) => setData([{ ...result.data, password: "Tinh1234" }]));
   }, []);
 
   const handleOnSubmit = (values) => {
     const findInfo = data.find((item) => {
-      return item.email.toLowerCase() === values.email.toLowerCase() && item.password === values.password;
+      return (
+        item.email.toLowerCase() === values.email.toLowerCase() &&
+        item.password === values.password
+      );
     });
 
     if (findInfo === undefined) {
@@ -133,6 +139,14 @@ export default function Login() {
     } else {
       openNotificationWithIcon("success", "Logged in successfully!");
       login(values.email, values.password);
+      dispatch(
+        userLogged({
+          email: findInfo.email,
+          avatar: findInfo.avatar,
+          first_name: findInfo.first_name,
+          last_name: findInfo.last_name,
+        })
+      );
     }
   };
 

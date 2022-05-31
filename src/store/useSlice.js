@@ -4,16 +4,17 @@ const initialState = {
   value: [],
 };
 
-export const useSlice = createSlice({
-  name: "use",
+export const counterSlice = createSlice({
+  name: "useLogin",
   initialState,
   reducers: {
-    addUse: (state, value) => {
-        state.value.push(value.payload);
+    userLogged: (state, action) => {
+      state.value = action.payload;
     },
   },
 });
 
-export const { addUse} = useSlice.actions;
+// Action creators are generated for each case reducer function
+export const { userLogged } = counterSlice.actions;
 
-export default useSlice.reducer;
+export default counterSlice.reducer;
